@@ -1,59 +1,43 @@
-<!DOCTYPE html>
-<html lang="fr-ca">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+function checkMDP($mdp)
+{
+    $symboles = ["a", "b", "c", "d", "e", "f", "g", "i", "j", "k", "h", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-    <link rel="stylesheet" href="css/style.css">
+    for ($i = 0; $i < count($symboles); $i++) {
 
-    <title>Brasser les cartes</title>
-</head>
+        for ($j = 0; $j < count($symboles); $j++) {
 
-<body>
-    <header>
-        <nav role="menubar" class="navbar">
-            <a role=" menuitem" href="index.php">Accueil</a>
-            <a role=" menuitem" href="page2.php">deviner l'heure</a>
-            <a role=" menuitem" class="active" href="page3.php">Brassage</a>
-            <a role=" menuitem" href="page4.php">validation de mot de passe</a>
-        </nav>
-    </header>
-    <main>
-        <?php
-        require('function.php');
+            for ($k = 0; $k < count($symboles); $k++) {
+                for ($r = 0; $r < count($symboles); $r++) {
+                    $mdp_4 = $symboles[$i] . $symboles[$j] . $symboles[$k] . $symboles[$r];
 
-        $cards = [];
-        $cardsSymbols = ["Carreau", "Trèfle", "Coeur", "Pique"];
-
-        foreach ($cardsSymbols as $symbol) {
-
-
-            for ($i = 1; $i <= 13; $i++) {
-                $cards[] = $i . "-" . $symbol;
+                    if ($mdp_4 == $mdp) {
+                        return $mdp;
+                    }
+                }
             }
         }
+    }
+}
+function timeExecution($mdp)
+{
+    $start_time = microtime(true);
+    checkMDP($mdp);
+    $end_time = microtime(true);
+    $execution_times = ($end_time - $start_time);
+    echo " le temps d'execution le mot de passe($mdp) = " . $execution_times . " sec <br>";
+}
 
-        shuffle_cards($cards);
+function shuffle_cards(array &$cards): void
+{
+    $numberItems = count($cards);
 
-        $cardIndex = 0;
-        ?>
+    for ($i = $numberItems - 1; $i > 0; $i--) {
+        $j = rand(0, $i);
 
-        <table>
-            <tbody>
-                <?php for ($i = 0; $i < 4; $i++) { ?>
-                <tr>
-                    <?php for ($j = 0; $j < 13; $j++) { ?>
-                    <td>
-                        <?php echo ($cards[$cardIndex]);
-                                $cardIndex++; ?>
-                    </td>
-                    <?php } ?>
-                </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-    </main>
-</body>
-
-</html>
+        $temp = $cards[$i];
+        $cards[$i] = $cards[$j];
+        $cards[$j] = $temp;
+    }
+}
