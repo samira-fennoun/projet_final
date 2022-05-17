@@ -21,15 +21,7 @@
             <a role=" menuitem" href="page4.php">validation de mot de passe</a>
         </nav>
     </header>
-    <div class="container">
 
-        <main>
-
-        </main>
-        <footer>
-
-        </footer>
-    </div>
 
 </body>
 
