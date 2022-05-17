@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  text-align: center;
+  padding: 15px;
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+p {
+  text-align: center;
+}
+main {
+  padding: 1em;
+  margin-bottom: 12px;
+}
+.zoneDeTravail {
+  padding-bottom: 100px;
+}
+/*navbar*/
+.navbar {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  overflow: hidden;
+  background-color: #1d9bf0;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  transition-duration: 0.4s;
+  transition-timing-function: linear;
+  background-color: white;
+  color: #1d9bf0;
+}
+.navbar a.active,
+div.active {
+  background-color: black;
+  color: white;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 136px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: #1d9bf0;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #1d9bf0;
+  color: white;
+  transition-duration: 0.4s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+h2 {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: auto;
+}
+
+th {
+  border: 1px solid black;
+  text-align: center;
+  font-variant: small-caps;
+  font-size: 1.2em;
+  color: black;
+  width: 150px;
+}
+
+tr {
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+td {
+  text-align: center;
+  color: black;
+  font-size: 1em;
+  border-collapse: collapse;
+  width: auto;
+  border: 1px solid black;
+}
+/*fin navbar*/
+.container {
+  min-height: 100%;
+  position: relative;
+}
+.form {
+  margin: 12px;
+  padding: 12px 17px;
+}
