@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <title>Brasser les cartes</title>
+    <title>brassage des cartes</title>
 </head>
 
 <body>
